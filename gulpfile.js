@@ -39,7 +39,7 @@ options.sass = {
 options.autoprefixer = {
     map: true,
     from: 'asset',
-    to: 'main.min.css'
+    to: 'style.css'
 };
 
 // A display error function, to format and make custom errors more uniform

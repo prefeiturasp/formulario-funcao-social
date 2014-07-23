@@ -4,6 +4,9 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -28,6 +31,23 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
+
+var dbUrl = process.env.MONGOHQ_URL || 'mongodb://vvv.dev/funcao-social';
+var connection = mongoose.createConnection(dbUrl);
+connection.on('error', console.error.bind(console, 'connection error:'));
+connection.once('open', function () {
+  console.info('connected to database')
+});
+
+var models = require('./models');
+function db (req, res, next) {
+  // req.db = {
+  //   User: connection.model('User', models.User, 'users'),
+  //   Post: connection.model('Post', models.Post, 'posts')
+  // };
+  return next();
+}
 
 /// error handlers
 

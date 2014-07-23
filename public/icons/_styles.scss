@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('/icons/fonts/icomoon.eot?-ygx6s9');
+	src:url('/icons/fonts/icomoon.eot?#iefix-ygx6s9') format('embedded-opentype'),
+		url('/icons/fonts/icomoon.woff?-ygx6s9') format('woff'),
+		url('/icons/fonts/icomoon.ttf?-ygx6s9') format('truetype'),
+		url('/icons/fonts/icomoon.svg?-ygx6s9#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-celular_estrelas:before {
+	content: "\e600";
+}
+.icon-interrogacao:before {
+	content: "\e601";
+}
+.icon-megafone:before {
+	content: "\e602";
+}
+.icon-seta_compartilhar:before {
+	content: "\e603";
+}
+.icon-seta_dupla_voltar:before {
+	content: "\e604";
+}

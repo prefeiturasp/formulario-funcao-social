@@ -1,3 +1,15 @@
+@import "../bower_components/foundation/scss/normalize";
+@import "../bower_components/foundation/scss/foundation";
+@import "../../public/icons/styles";
+@import "../../public/fonts/styles";
+
+$verde_claro: #CACB2B;
+$verde_escuro: #333416;
 body {
-	color: #ccc;
+	background-color: $verde_claro;
+
+}
+
+.title {
+	background-color: $verde_escuro;
 }
