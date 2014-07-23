@@ -13,6 +13,16 @@ var paths = {
         src: './assets/sass',
         files: './assets/sass/**/*.scss',
         dest: './public/stylesheets'
+    },
+    images: {
+        src: './assets/images',
+        files: './assets/images/**/*.png',
+        dest: './public/images'
+    },
+    javascript: {
+        src: './assets/javascripts',
+        files: './assets/javascripts/**/*.js',
+        dest: './public/javascripts'
     }
 }
 
@@ -23,13 +33,13 @@ options.sass = {
     // sourceMap: 'sass',
     // sourceComments: 'map',
     precision: 10,
-    imagePath: 'assets/images',
+    imagePath: paths.images.src,
     includePaths: [paths.styles.src]
 };
 options.autoprefixer = {
     map: true,
     from: 'asset',
-    to: 'asrp.min.css'
+    to: 'main.min.css'
 };
 
 // A display error function, to format and make custom errors more uniform
@@ -72,15 +82,57 @@ gulp.task('sass', function (){
     .pipe(gulp.dest(paths.styles.dest))
 });
 
+// --------------------------------------------
+
+var imagemin   = require('gulp-imagemin');
+ 
+gulp.task('images', function(){
+    return gulp.src(paths.images.files)
+        .pipe(imagemin())
+        .pipe(gulp.dest(paths.images.dest));
+});
+
+// ---------------------------------------------
+
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+ 
+gulp.task('browserify', function() {
+    return browserify(paths.javascript.src + '/app.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('bundle.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest(paths.javascript.dest));
+});
+
+// ---------------------------------------------
+
 // This is the default task - which is run when `gulp` is run
 // The tasks passed in as an array are run before the tasks within the function
-gulp.task('default', ['sass'], function() {
+gulp.task('default', ['sass', 'images', 'browserify'], function() {
     // Watch the files in the paths object, and when there is a change, fun the functions in the array
     gulp.watch(paths.styles.files, ['sass'])
     // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
     .on('change', function(evt) {
         console.log(
             '[watcher] File ' + evt.path.replace(/.*(?=sass)/,'') + ' was ' + evt.type + ', compiling...'
+        );
+    });
+
+    gulp.watch(paths.images.files, ['images'])
+    // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
+    .on('change', function(evt) {
+        console.log(
+            '[watcher] File ' + evt.path.replace(/.*(?=png)/,'') + ' was ' + evt.type + ', compiling...'
+        );
+    });
+
+    gulp.watch(paths.javascript.files, ['browserify'])
+    // Also when there is a change, display what file was changed, only showing the path after the 'sass folder'
+    .on('change', function(evt) {
+        console.log(
+            '[watcher] File ' + evt.path.replace(/.*(?=js)/,'') + ' was ' + evt.type + ', compiling...'
         );
     });
 });

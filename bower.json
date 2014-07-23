@@ -1,0 +1,26 @@
+{
+  "name": "formulario-funcao-social",
+  "version": "0.0.1",
+  "homepage": "https://github.com/prefeiturasp/formulario-funcao-social",
+  "authors": [
+    "Lucas Pirola <lucaspirola@gmail.com>"
+  ],
+  "description": "Formulário para cadastro de imóveis abandonados",
+  "moduleType": [
+    "node"
+  ],
+  "license": "GPL v3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "main": "app.js",
+  "dependencies": {
+    "foundation": "~5.3.1"
+  }
+}
