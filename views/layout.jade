@@ -4,10 +4,21 @@ html
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
-        div(class="small-12 columns")
-            div(id="compartilhar",data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Faça sua contribuição")
-            div(class="small-12 columns")
+        div(class="header row-full")
+            div(class="columns small-12 medium-4")
+                img(src="images/logo-gestao-urbana.png", alt="Gestão Urbana - Fazer juntos a São Paulo que a gente quer.")
+                a(class="voltar")
+                    i(class="icon-seta_dupla_voltar")
+            div(class="columns small-12 medium-5")
+                h1 Função Social
+            div(class="columns small-12 medium-3")
+                div(id="compartilhar",data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Faça sua contribuição")
+
+        div(class="title small-12 columns") 
+            h2 
+                i(class="icon-celular_estrelas")
+                | Ei, a gente está elaborando um app colaborativo para promover a função social dos imóveis de São Paulo! 
         div(class="container")
             block content
 
-         script(src='/javascripts/bundle.js')
+        script(src='/javascripts/bundle.js')

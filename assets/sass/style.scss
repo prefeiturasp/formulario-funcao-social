@@ -1,16 +1,61 @@
 @import "../bower_components/foundation/scss/normalize";
+
+$cinza: #CBCBCB;
+$verde_claro: #CACB2B;
+$verde_escuro: #333416;
+$verde_amarelado: #ABA935;
+
+@import "settings";
 @import "../bower_components/foundation/scss/foundation";
 @import "../../public/icons/styles";
 @import "../../public/fonts/styles";
 
-$verde_claro: #CACB2B;
-$verde_escuro: #333416;
-body {
-	background-color: $verde_claro;
+.row-full {
+	width: 100%;
+	height: 50px;
+}
 
+.header {
+	background: top left url(../images/bg-header.png) repeat;
+
+	h1 {
+		font-size: 18px;
+		line-height: 18px;
+		margin: 14px 0;
+	}
+
+	img {
+		vertical-align: top;
+		margin-top: 14px;
+	}
+
+	.voltar {
+		color: $cinza;
+		font-size: 18px;
+		line-height: 18px;
+		padding: 15px;
+		margin: 0 0 0 65px;
+		display: inline-block;
+
+		border: 1px solid $cinza;
+		border-top: 0;
+		border-bottom: 0;
+	}
+
+	#compartilhar {
+		margin: 15px 0;
+
+		a {
+			font-size: 18px;
+			line-height: 18px;
+			margin: 0 15px;
+		}
+	}
 }
 
 .title {
 	background-color: $verde_escuro;
+	h2 {
+		color: #fff;
+	}
 }
-
