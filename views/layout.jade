@@ -1,7 +1,13 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        div(class="small-12 columns")
+            div(id="compartilhar",data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Faça sua contribuição")
+            div(class="small-12 columns")
+        div(class="container")
+            block content
+
+         script(src='/javascripts/bundle.js')

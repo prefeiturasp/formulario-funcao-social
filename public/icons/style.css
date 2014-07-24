@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'funcao-social';
-	src:url('../icons/fonts/funcao-social.eot?-yddyxe');
-	src:url('../icons/fonts/funcao-social.eot?#iefix-yddyxe') format('embedded-opentype'),
-		url('../icons/fonts/funcao-social.woff?-yddyxe') format('woff'),
-		url('../icons/fonts/funcao-social.ttf?-yddyxe') format('truetype'),
-		url('../icons/fonts/funcao-social.svg?-yddyxe#funcao-social') format('svg');
+	src:url('fonts/funcao-social.eot?-yddyxe');
+	src:url('fonts/funcao-social.eot?#iefix-yddyxe') format('embedded-opentype'),
+		url('fonts/funcao-social.woff?-yddyxe') format('woff'),
+		url('fonts/funcao-social.ttf?-yddyxe') format('truetype'),
+		url('fonts/funcao-social.svg?-yddyxe#funcao-social') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

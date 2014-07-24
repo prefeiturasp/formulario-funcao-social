@@ -98,6 +98,19 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
  
 gulp.task('browserify', function() {
+    // gulp.src(paths.javascript.src + '/app.js')
+    //     .pipe(browserify({
+    //         shim: {
+    //             jQuery: {
+    //                 path: paths.javascript.src + '/../bower_components/jquery/dist/jquery.min.js',
+    //                 exports: '$'
+    //             }
+    //         }
+    //     }).bundle())
+    //     //Pass desired output filename to vinyl-source-stream
+    //     .pipe(source('bundle.js'))
+    //     // Start piping stream to tasks!
+    //     .pipe(gulp.dest(paths.javascript.dest));
     return browserify(paths.javascript.src + '/app.js')
         .bundle()
         //Pass desired output filename to vinyl-source-stream
