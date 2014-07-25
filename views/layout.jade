@@ -4,15 +4,23 @@ html
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
-        div(class="header row-full")
+        div(class="header row full")
             div(class="columns small-12 medium-4")
                 img(src="images/logo-gestao-urbana.png", alt="Gestão Urbana - Fazer juntos a São Paulo que a gente quer.")
-                a(class="voltar")
+                a(class="voltar right")
                     i(class="icon-seta_dupla_voltar")
-            div(class="columns small-12 medium-5")
+            
+            hr(class="show-for-small-only")
+
+            div(class="columns small-6 medium-5")
                 h1 Função Social
-            div(class="columns small-12 medium-3")
-                div(id="compartilhar",data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Faça sua contribuição")
+
+            div(class="columns small-6 show-for-small-only")
+                a(class="voltar right")
+                    i(class="icon-seta_compartilhar")
+
+            div(class="columns show-for-medium-up medium-3")
+                div(id="compartilhar", class="text-right", data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Faça sua contribuição")
 
         div(class="title small-12 columns") 
             h2 

@@ -8,7 +8,7 @@ jQuery('#compartilhar').sharrre({
         facebook: true,
         googlePlus: true
     },
-    template: '<a href="#" class="facebook"><i class="icon-facebook"></i></a><a href="#" class="twitter"><i class="icon-twitter"></i></a><a href="#" class="googleplus"><i class="icon-google-plus"></i></a>',
+    template: '<span>Compartilhar:</span><a href="#" class="facebook"><i class="icon-facebook"></i></a><a href="#" class="twitter"><i class="icon-twitter"></i></a><a href="#" class="googleplus"><i class="icon-google-plus"></i></a>',
     enableHover: false,
     enableTracking: true,
     urlCurl: '',
