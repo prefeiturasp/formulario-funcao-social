@@ -8,7 +8,11 @@ block content
                 h4(class="text-center")
                     i(class="icon-megafone")
                     span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR 
-        form(action="./receber_contribuicao", method="post", enctype="multipart/form-data")
+                if msg
+                .aler-box.urgent
+                    |msg
+
+        form(action="/contribuir/receber", method="post", enctype="multipart/form-data")
             .row
                 .columns.small-12.medium-4.medium-offset-2
                     legend
@@ -20,7 +24,7 @@ block content
                         .medium-12.columns
                             label
                                 | Nome
-                            input(type='text', placeholder='', name='nome')
+                            input(type='text', placeholder='', name='contribuidor')
                     .row
                         .medium-12.columns
                             label
@@ -64,7 +68,7 @@ block content
                             input(type='text', placeholder='', name='cep', class='small-8')
                         .small-3.medium-2.columns.end
                             label
-                                &nbsp;
+                                |&nbsp;
                             input(type='text', placeholder='', name='cep2', class='small-4')
                     .row
                         .small-12.medium-8.columns
@@ -99,17 +103,17 @@ block content
                                 | A quanto tempo você percebe que o imóvel está ocioso?
 
                             .switch.radius.small
-                                input#tempo_ocioso_1(type='radio', name='tempo_ocioso')
+                                input#tempo_ocioso_1(type='radio', name='tempo_ocioso', value='1')
                                 label(for='tempo_ocioso_1')
                                 span Até 1 ano
 
                             .switch.radius.small
-                                input#tempo_ocioso_2(type='radio', name='tempo_ocioso')
+                                input#tempo_ocioso_2(type='radio', name='tempo_ocioso', value='2')
                                 label(for='tempo_ocioso_2')
                                 span Mais de 1 ano
 
                             .switch.radius.small
-                                input#tempo_ocioso_3(type='radio', name='tempo_ocioso')
+                                input#tempo_ocioso_3(type='radio', name='tempo_ocioso', value='3')
                                 label(for='tempo_ocioso_3')
                                 span Não sei
                     .row

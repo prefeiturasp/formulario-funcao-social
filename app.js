@@ -7,10 +7,15 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 
+var Imovel = require('./models/imovel');
 var routes = require('./routes/index');
 var contribuir = require('./routes/contribuir');
 
+
+var multer  = require('multer')
 var app = express();
+
+app.use(multer({ dest: './uploads/'}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/contribuir', contribuir);
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,15 +45,6 @@ connection.on('error', console.error.bind(console, 'connection error:'));
 connection.once('open', function () {
   console.info('connected to database')
 });
-
-var models = require('./models');
-function db (req, res, next) {
-  // req.db = {
-  //   User: connection.model('User', models.User, 'users'),
-  //   Post: connection.model('Post', models.Post, 'posts')
-  // };
-  return next();
-}
 
 /// error handlers
 
