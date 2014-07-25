@@ -11,7 +11,13 @@ $verde_amarelado: #ABA935;
 @import "../../public/fonts/styles";
 
 body {
-	background: 50% 20% url(../images/bg.png) $verde_claro no-repeat;
+	background: 50% 25% url(../images/bg.png) $verde_claro no-repeat;
+}
+
+@media #{$small-only} {
+	body {
+		background-position: 50% 75%;
+	}
 }
 
 .row.full {
@@ -67,7 +73,18 @@ body {
 
 .title {
 	background-color: rgba( 51, 52, 22,.75);
+	padding: 15px 0;
 	h2 {
+		margin: 0;
 		color: #fff;
+		font-size: 17px;
+		line-height: 22px;
+
+		i {
+			display: block;
+			font-size: 40px;
+			line-height: 30px;
+			margin-bottom: 10px;
+		}
 	}
 }
