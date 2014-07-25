@@ -1,7 +1,7 @@
 @import "../bower_components/foundation/scss/normalize";
 
 $cinza: #CBCBCB;
-$verde_claro: #CACB2B;
+$verde_claro: #CCCC33;
 $verde_escuro: #333416;
 $verde_amarelado: #ABA935;
 
@@ -87,4 +87,47 @@ body {
 			margin-bottom: 10px;
 		}
 	}
+}
+
+h3 {
+	color: $verde_escuro;
+	font-size: 14px;
+	line-height: 14px;
+	margin: 15px 0;
+}
+
+
+.main.button {
+
+	border-radius: 15px;
+
+	box-shadow: 4px 4px 0 0 $verde_escuro;
+
+	background-color: #fff;
+	color: $verde_escuro;
+
+	margin-bottom: rem-calc(15);
+	width: rem-calc(280);
+	padding: rem-calc(5);
+	font-size: rem-calc(12);
+	line-height: rem-calc(16);
+	text-align: left;
+
+	span {
+		display: inline-block;
+		width: 80%;
+		margin-left: rem-calc(10);
+	}
+
+	i {
+		vertical-align: top;
+		text-align: center;
+		display: inline-block;
+		padding: rem-calc(5);
+		border: 1px solid $verde_escuro;
+		border-radius: rem-calc(50);
+		font-size: rem-calc(18);
+	}
+
+
 }
