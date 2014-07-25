@@ -1,0 +1,118 @@
+extends layout
+
+block content
+    include ./includes/introducao.jade
+    .content
+        .row
+            .columns.small-12
+                h4(class="text-center")
+                    i(class="icon-megafone")
+                    span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR 
+        form(action="./receber_contribuicao", method="post", enctype="multipart/form-data")
+            .row
+                .columns.small-12.medium-4.medium-offset-2
+                    legend
+                        |Dados Pessoais
+                    p.alert-box
+                        |OBS: os campos não são obrigatórios, ou seja, você
+                        |não precisa se identificar.
+                    .row
+                        .medium-12.columns
+                            label
+                                | Nome
+                            input(type='text', placeholder='', name='nome')
+                    .row
+                        .medium-12.columns
+                            label
+                                | E-mail
+                            input(type='text', placeholder='', name="email")
+                    .row
+                        .medium-12.columns
+                            label
+                                | Região em que mora
+                            select(name="regiao")
+                                option(value='') Selecione
+                                option(value='Sul') Sul
+                                option(value='norte') Norte
+                                option(value='Leste') Leste
+                                option(value='oeste') Oeste
+                                option(value='centro') Centro
+                
+                .columns.small-12.medium-6
+                    legend
+                        |Dados do Imóvel
+                    p.alert-box
+                        |ATENÇÃO: Os campos destacados são de preenchimento obrigatório. 
+                        |Os demais campos são optativos.
+                    .row
+                        .small-12.medium-8.columns
+                            label
+                                | Logradouro (rua, avenida, etc)
+                            input(type='text', placeholder='', name='logradouro')
+                        .small-6.medium-2.columns.end
+                            label
+                                | Número
+                            input(type='text', placeholder='', name='numero')
+                    .row
+                        .small-12.medium-8.columns
+                            label
+                                | Bairro
+                            input(type='text', placeholder='', name='bairro')
+                        .small-6.medium-2.columns.end
+                            label
+                                | CEP
+                            input(type='text', placeholder='', name='cep', class='small-8')
+                        .small-3.medium-2.columns.end
+                            label
+                                &nbsp;
+                            input(type='text', placeholder='', name='cep2', class='small-4')
+                    .row
+                        .small-12.medium-8.columns
+                            label
+                                | Foto
+                            input(type='file', placeholder='Fazer upload de arquivo', name='foto')
+
+                    .row
+                        .small-12.medium-8.columns
+                            label
+                                | Sobre as condições do imovel
+                            .switch.small.radius
+                                input#possui_lixo(type='checkbox', name="possui_lixo", value="sim")
+                                label(for='possui_lixo')
+                                span Presença de lixo
+                            .switch.small.radius
+                                input#portas_lacradas(type='checkbox', name="portas_lacradas", value="sim")
+                                label(for='portas_lacradas')
+                                span Janelas ou portas lacradas
+                            .switch.small.radius
+                                input#depredacao(type='checkbox', name="depredacao", value="sim")
+                                label(for='depredacao')
+                                span Sinais de depredação
+                            .switch.small.radius
+                                input#outros(type='checkbox', name="outros", value="sim")
+                                label(for='outros')
+                                span Outros
+
+                    .row
+                        .small-12.medium-8.columns
+                            label
+                                | A quanto tempo você percebe que o imóvel está ocioso?
+
+                            .switch.radius.small
+                                input#tempo_ocioso_1(type='radio', name='tempo_ocioso')
+                                label(for='tempo_ocioso_1')
+                                span Até 1 ano
+
+                            .switch.radius.small
+                                input#tempo_ocioso_2(type='radio', name='tempo_ocioso')
+                                label(for='tempo_ocioso_2')
+                                span Mais de 1 ano
+
+                            .switch.radius.small
+                                input#tempo_ocioso_3(type='radio', name='tempo_ocioso')
+                                label(for='tempo_ocioso_3')
+                                span Não sei
+                    .row
+                        .small-offset-6.small-6.medium-offset-5.medium-3.end.columns
+                            button.right(type="submit")
+                                |enviar

@@ -1,14 +1,7 @@
 extends layout
 
 block content
-	h3(class="text-center") Mas enquanto isso você já pode contribuir:
-
-	div(class="row")
-		div(class="columns small-12 medium-6 medium-centered text-center")
-			a(class="main button round")
-				i(class="icon-interrogacao")
-				span QUERO ENTENDER MAIS SOBRE A FUNÇÃO SOCIAL DA PROPRIEDADE
-
-			a(class="main button round")
-				i(class="icon-megafone")
-				span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR 
+	include ./includes/introducao.jade
+		a(class="main button round" href="./contribuir")
+			i(class="icon-megafone")
+			span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR 
