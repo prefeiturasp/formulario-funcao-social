@@ -7,24 +7,23 @@ block content
             .columns.small-12
                 h4(class="text-center")
                     i(class="icon-megafone")
-                    span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR 
-                if (msg)
-                .aler-box.urgent
-                    |#{msg}
+                    span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR
+                if msg
+                    p.alert-box.alert #{msg}
 
         form(action="/contribuir/receber", method="post", enctype="multipart/form-data", data-abide)
             .row
-                .columns.small-12.medium-4.medium-offset-2
+                fieldset.columns.small-12.medium-4.medium-offset-2
                     legend
                         |Dados Pessoais
-                    p.alert-box
+                    p.alert-box.secondary
                         |OBS: os campos não são obrigatórios, ou seja, você
                         |não precisa se identificar.
                     .row
                         .medium-12.columns
                             label
                                 | Nome
-                            input(type='text', placeholder='', name='contribuidor', pattern='alpha')
+                            input(type='text', placeholder='', name='contribuidor', pattern='([a-zA-Z]| |/|\|@|#|$|%|&)+')
                             small(class="error")
                                 |Apenas letras são permitidas.
 
@@ -47,17 +46,17 @@ block content
                                 option(value='oeste') Oeste
                                 option(value='centro') Centro
                 
-                .columns.small-12.medium-6
+                fieldset.columns.small-12.medium-6
                     legend
                         |Dados do Imóvel
-                    p.alert-box
+                    p.alert-box.secondary
                         |ATENÇÃO: Os campos destacados são de preenchimento obrigatório. 
                         |Os demais campos são optativos.
                     .row
                         .small-12.medium-8.columns
                             label
                                 | Logradouro (rua, avenida, etc)
-                            input(type='text', placeholder='', name='logradouro', pattern="alpha", required)
+                            input(type='text', placeholder='', name='logradouro', pattern='([a-zA-Z]| |/|\|@|#|$|%|&)+', required)
                             small(class="error")
                                 |Preenchimento obrigatório, apenas letras.
                         .small-6.medium-2.columns.end
@@ -70,7 +69,7 @@ block content
                         .small-12.medium-8.columns
                             label
                                 | Bairro
-                            input(type='text', placeholder='', name='bairro', pattern='alpha', required)
+                            input(type='text', placeholder='', name='bairro', pattern='([a-zA-Z]| |/|\|@|#|$|%|&)+', required)
                             small(class="error")
                                 |Preenchimento obrigatório, apenas letras
                         .small-6.medium-2.columns.end

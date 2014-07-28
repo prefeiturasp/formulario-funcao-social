@@ -19,6 +19,12 @@ body {
 		background-position: 50% 75%;
 	}
 }
+input[type="text"]:required {
+	border-left: 5px solid $verde_claro;
+}
+fieldset {
+	border: 0;
+}
 
 .row.full {
 	max-width: none;
