@@ -1,6 +1,8 @@
 var jQuery = require('../bower_components/jquery/dist/jquery.min');
 window.jQuery = jQuery;
+var Foundation = require('../bower_components/foundation/js/foundation.min');
 var Sharrre = require('../bower_components/Sharrre/jquery.sharrre.min');
+
 
 jQuery('#compartilhar').sharrre({
     share: {
@@ -24,3 +26,5 @@ jQuery('#compartilhar').sharrre({
         });
     }
 });
+
+jQuery(document).foundation();

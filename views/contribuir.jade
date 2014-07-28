@@ -8,11 +8,11 @@ block content
                 h4(class="text-center")
                     i(class="icon-megafone")
                     span SEI DE UM IMÓVEL OCIOSO E QUERO CONTRIBUIR 
-                if msg
+                if (msg)
                 .aler-box.urgent
-                    |msg
+                    |#{msg}
 
-        form(action="/contribuir/receber", method="post", enctype="multipart/form-data")
+        form(action="/contribuir/receber", method="post", enctype="multipart/form-data", data-abide)
             .row
                 .columns.small-12.medium-4.medium-offset-2
                     legend
@@ -24,12 +24,17 @@ block content
                         .medium-12.columns
                             label
                                 | Nome
-                            input(type='text', placeholder='', name='contribuidor')
+                            input(type='text', placeholder='', name='contribuidor', pattern='alpha')
+                            small(class="error")
+                                |Apenas letras são permitidas.
+
                     .row
                         .medium-12.columns
                             label
                                 | E-mail
-                            input(type='text', placeholder='', name="email")
+                            input(type='email', placeholder='', name="email")
+                            small(class="error")
+                                |Informe um endereço de email válido.
                     .row
                         .medium-12.columns
                             label
@@ -52,24 +57,34 @@ block content
                         .small-12.medium-8.columns
                             label
                                 | Logradouro (rua, avenida, etc)
-                            input(type='text', placeholder='', name='logradouro', required)
+                            input(type='text', placeholder='', name='logradouro', pattern="alpha", required)
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas letras.
                         .small-6.medium-2.columns.end
                             label
                                 | Número
-                            input(type='text', placeholder='', name='numero', required)
+                            input(type='text', placeholder='', name='numero', pattern='number', required)
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas números.
                     .row
                         .small-12.medium-8.columns
                             label
                                 | Bairro
-                            input(type='text', placeholder='', name='bairro', required)
+                            input(type='text', placeholder='', name='bairro', pattern='alpha', required)
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas letras
                         .small-6.medium-2.columns.end
                             label
                                 | CEP
-                            input(type='text', placeholder='', name='cep', class='small-8')
+                            input(type='text', placeholder='', name='cep', class='small-8', pattern='number', maxlength='5')
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas números
                         .small-3.medium-2.columns.end
                             label
                                 |&nbsp;
-                            input(type='text', placeholder='', name='cep2', class='small-4')
+                            input(type='text', placeholder='', name='cep2', class='small-4', pattern='number', maxlength='3')
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas números
                     .row
                         .small-12.medium-8.columns
                             label

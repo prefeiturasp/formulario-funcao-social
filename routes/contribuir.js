@@ -12,7 +12,7 @@ router.post('/receber', function(req, res) {
 
     var imovel = new Imovel();
     imovel.contribuidor = req.body.contribuidor;
-console.log(req.body);
+
     // save the bear and check for errors
     imovel.save(function(err) {
         console.log(imovel);
