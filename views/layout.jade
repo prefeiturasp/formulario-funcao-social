@@ -1,8 +1,27 @@
 doctype html
 html
     head
-        title= title
+        title Função Social - Gestão Urbana
         link(rel='stylesheet', href='/stylesheets/style.css')
+        meta(name='description', content='Sabe de alum imóvel ocioso? Colabore com este projeto inovador da Prefeitura de São Paulo.')
+        
+        // Twitter Card data 
+        meta(name='twitter:card', content='summary')
+        meta(name='twitter:site', content='@gestaourbanasp')
+        meta(name='twitter:title', content='Função Social - Gestão Urbana')
+        meta(name='twitter:description', content='Sabe de alum imóvel ocioso? Colabore com este projeto inovador da Prefeitura de São Paulo.')
+        meta(name='twitter:creator', content='@gestaourbanasp')
+        meta(name='twitter:image', content='/images/social.png')
+
+        // Open Graph data 
+        meta(property='og:title', content='Função Social - Gestão Urbana')
+        meta(property='og:type', content='article')
+        meta(property='og:url', content='http://gestaourbana.prefeitura.sp.gov.br/funcao-social/')
+        meta(property='og:image', content='/images/social.png')
+        meta(property='og:description', content='Sabe de alum imóvel ocioso? Colabore com este projeto inovador da Prefeitura de São Paulo.')
+        meta(property='og:site_name', content='Função Social')
+        meta(property='fb:admins', content='')
+
     body
         div(class="header row full")
             div(class="columns small-12 medium-4")
@@ -20,7 +39,7 @@ html
                     i(class="icon-seta_compartilhar")
 
             div(class="columns show-for-medium-up medium-3")
-                div(id="compartilhar", class="text-right", data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Faça sua contribuição")
+                div(id="compartilhar", class="text-right", data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Sabe de alum imóvel ocioso? Colabore com este projeto inovador da Prefeitura de São Paulo.", data-image="/images/social.png")
 
         div(class="title row full")
             div(class="medium-centered medium-6 small-12 columns") 
