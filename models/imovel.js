@@ -18,5 +18,10 @@ var imovelSchema = new Schema({
   tempo_ocioso:  Number,
   created: { type: Date, default: Date.now },
 });
-
+imovelSchema.methods.speak = function () {
+  var greeting = this.contribuidor
+    ? "Meow contribuidor is " + this.contribuidor
+    : "I don't have a contribuidor"
+  console.log(greeting);
+}
 module.exports = mongoose.model('Imovel', imovelSchema);

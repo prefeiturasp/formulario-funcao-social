@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 
-var Imovel = require('./models/imovel');
 var routes = require('./routes/index');
 var contribuir = require('./routes/contribuir');
 
@@ -40,11 +39,29 @@ app.use(function(req, res, next) {
 
 
 var dbUrl = process.env.MONGOHQ_URL || 'mongodb://vvv.dev/funcao-social';
-var connection = mongoose.createConnection(dbUrl);
-connection.on('error', console.error.bind(console, 'connection error:'));
-connection.once('open', function () {
-  console.info('connected to database')
+//var connection = mongoose.createConnection(dbUrl);
+var connection = mongoose.connect(dbUrl);
+// CONNECTION EVENTS
+// When successfully connected
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose default connection open to ' + dbUrl);
 });
+// If the connection throws an error
+mongoose.connection.on('error',function (err) {
+  console.log('Mongoose default connection error: ' + err);
+});
+// When the connection is disconnected
+mongoose.connection.on('disconnected', function () {
+  console.log('Mongoose default connection disconnected');
+});
+// If the Node process ends, close the Mongoose connection
+process.on('SIGINT', function() {
+  mongoose.connection.close(function () {
+    console.log('Mongoose default connection disconnected through app termination');
+    process.exit(0);
+  });
+});
+
 
 /// error handlers
 
