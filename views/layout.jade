@@ -2,7 +2,7 @@ doctype html
 html
     head
         title Função Social - Gestão Urbana
-        link(rel='stylesheet', href='stylesheets/style.css')
+        link(rel='stylesheet', href='/funcao-social/stylesheets/style.css')
         meta(name='description', content='Você já ouviu falar em “função social da propriedade”? Sabia que este assunto está diretamente ligado aos imóveis vazios ou abandonados? Se você conhece algum imóvel desse tipo e gostaria de saber mais sobre esse assunto contribuindo para mudar essa realidade em São Paulo visite nossa página da internet e saiba como.')
         
         // Twitter Card data 
@@ -11,13 +11,13 @@ html
         meta(name='twitter:title', content='Função Social - Gestão Urbana')
         meta(name='twitter:description', content='Você já ouviu falar em “função social da propriedade”? Sabia que este assunto está diretamente ligado aos imóveis vazios ou abandonados? Se você conhece algum imóvel desse tipo e gostaria de saber mais sobre esse assunto contribuindo para mudar essa realidade em São Paulo visite nossa página da internet e saiba como.')
         meta(name='twitter:creator', content='@gestaourbanasp')
-        meta(name='twitter:image', content='images/social.png')
+        meta(name='twitter:image', content='/funcao-social/images/social.png')
 
         // Open Graph data 
         meta(property='og:title', content='Função Social - Gestão Urbana')
-        meta(property='og:type', content='article')
+        meta(property='og:type', content='site')
         meta(property='og:url', content='http://gestaourbana.prefeitura.sp.gov.br/funcao-social/')
-        meta(property='og:image', content='images/social.png')
+        meta(property='og:image', content='http://gestaourbana.prefeitura.sp.gov.br/funcao-social/images/social.png')
         meta(property='og:description', content='Você já ouviu falar em “função social da propriedade”? Sabia que este assunto está diretamente ligado aos imóveis vazios ou abandonados? Se você conhece algum imóvel desse tipo e gostaria de saber mais sobre esse assunto contribuindo para mudar essa realidade em São Paulo visite nossa página da internet e saiba como.')
         meta(property='og:site_name', content='Função Social')
         meta(property='fb:admins', content='')
@@ -25,21 +25,17 @@ html
     body
         div(class="header row full")
             div(class="columns small-12 medium-4")
-                img(src="images/logo-gestao-urbana.png", alt="Gestão Urbana - Fazer juntos a São Paulo que a gente quer.")
+                img(src="/funcao-social/images/logo-gestao-urbana.png", alt="Gestão Urbana - Fazer juntos a São Paulo que a gente quer.")
                 a(class="voltar right", href='http://gestaourbana.prefeitura.sp.gov.br')
                     i(class="icon-seta_dupla_voltar")
             
             hr(class="show-for-small-only")
 
-            div(class="columns small-6 medium-5")
+            div(class="columns small-6 medium-4")
                 h1 Função Social
 
-            div(class="columns small-6 show-for-small-only")
-                a(class="voltar right")
-                    i(class="icon-seta_compartilhar")
-
-            div(class="columns show-for-medium-up medium-3")
-                div(id="compartilhar", class="text-right", data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Sabe de alum imóvel ocioso? Colabore com este projeto inovador da Prefeitura de São Paulo.", data-image="images/social.png")
+            div(class="columns small-6 medium-4")
+                div(id="compartilhar", class="text-right", data-url="http://gestaourbana.prefeitura.sp.gov.br/funcao-social/",data-text="Sabe de alum imóvel ocioso? Colabore com este projeto inovador da Prefeitura de São Paulo.", data-image="/funcao-social/images/social.png")
 
         div(class="title row full")
             div(class="medium-centered medium-6 small-12 columns") 
@@ -49,4 +45,4 @@ html
         
         block content
 
-        script(src='javascripts/bundle.js')
+        script(src='/funcao-social/javascripts/bundle.js')

@@ -11,7 +11,7 @@ block content
                 if msg
                     p.alert-box.alert #{msg}
 
-        form(action="contribuir/receber", method="post", enctype="multipart/form-data", data-abide)
+        form(action="/funcao-social/contribuir/receber", method="post", enctype="multipart/form-data", data-abide)
             .row
                 fieldset.columns.small-12.medium-4.medium-offset-2
                     legend
@@ -56,7 +56,7 @@ block content
                         .small-12.medium-8.columns
                             label
                                 | Logradouro (rua, avenida, etc)
-                            input(type='text', placeholder='', name='logradouro', pattern='([a-zA-Z]| |/|\|@|#|$|%|&)+', required)
+                            input(type='text', placeholder='', name='logradouro', required)
                             small(class="error")
                                 |Preenchimento obrigatório, apenas letras.
                         .small-6.medium-2.columns.end
@@ -69,7 +69,7 @@ block content
                         .small-12.medium-8.columns
                             label
                                 | Bairro
-                            input(type='text', placeholder='', name='bairro', pattern='([a-zA-Z]| |/|\|@|#|$|%|&)+', required)
+                            input(type='text', placeholder='', name='bairro', required)
                             small(class="error")
                                 |Preenchimento obrigatório, apenas letras
                         .small-6.medium-2.columns.end
@@ -93,7 +93,7 @@ block content
                     .row
                         .small-12.medium-8.columns
                             label
-                                | Sobre as condições do imovel
+                                | Sobre as condições do imóvel
                             .switch.small.radius
                                 input#possui_lixo(type='checkbox', name="possui_lixo", value="sim")
                                 label(for='possui_lixo')

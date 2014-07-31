@@ -68,6 +68,12 @@ fieldset {
 
 	#compartilhar {
 		margin: 15px 0;
+		width: 100%;
+
+		span {
+			width: 150px;
+			float: left;
+		}
 
 		a {
 			font-size: 18px;

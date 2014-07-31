@@ -10,7 +10,6 @@ var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var contribuir = require('./routes/contribuir');
 
-
 var multer  = require('multer')
 var app = express();
 
@@ -25,9 +24,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', routes);
-app.use('/contribuir', contribuir);
+app.use('/funcao-social/', express.static(path.join(__dirname, 'public')));
+app.use('/funcao-social/', routes);
+app.use('/funcao-social/contribuir', contribuir);
 
 
 /// catch 404 and forward to error handler
@@ -38,7 +37,7 @@ app.use(function(req, res, next) {
 });
 
 
-var dbUrl = process.env.MONGOHQ_URL || 'mongodb://vvv.dev/funcao-social';
+var dbUrl = process.env.MONGOHQ_URL || 'mongodb://127.0.0.1/funcao-social';
 //var connection = mongoose.createConnection(dbUrl);
 var connection = mongoose.connect(dbUrl);
 // CONNECTION EVENTS
