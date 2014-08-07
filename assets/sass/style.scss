@@ -1,8 +1,8 @@
 @import "../bower_components/foundation/scss/normalize";
 
 $cinza: #CBCBCB;
-$verde_claro: #CCCC33;
-$verde_escuro: #333416;
+$verde_claro: #cec399;
+$verde_escuro: #343416;
 $verde_amarelado: #ABA935;
 
 @import "settings";
@@ -84,7 +84,7 @@ fieldset {
 }
 
 .title {
-	background-color: rgba( 51, 52, 22,.75);
+	background-color: rgba(198, 32, 36,.75);
 	padding: 15px 0;
 	h2 {
 		margin: 0;
