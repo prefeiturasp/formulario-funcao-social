@@ -6,6 +6,7 @@ var imovelSchema = new Schema({
   email: String,
   regiao:   String,
   logradouro: String,
+  ponto_referencia: String,
   numero: Number,
   bairro: String,
   cep: Number,
@@ -21,7 +22,9 @@ var imovelSchema = new Schema({
   possui_lixo: Boolean,
   portas_lacradas: Boolean,
   depredacao: Boolean,
+  limpo_conservado: Boolean,
   outros: Boolean,
+  outros_valor: String,
   tempo_ocioso:  Number,
   created: { type: Date, default: Date.now },
 });

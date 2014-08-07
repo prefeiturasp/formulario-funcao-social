@@ -28,3 +28,15 @@ jQuery('#compartilhar').sharrre({
 });
 
 jQuery(document).foundation();
+
+jQuery(document).on('ready', function () {
+    jQuery('#outros').on('change', function () {
+        if (this.checked) {
+            jQuery('#outros_valor').attr('required', 'true');
+            jQuery('#box_opcoes_outros').removeClass('hide');
+        } else {
+            jQuery('#outros_valor').removeAttr('required');
+            jQuery('#box_opcoes_outros').addClass('hide');
+        }
+    });
+});

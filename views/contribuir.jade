@@ -23,10 +23,7 @@ block content
                         .medium-12.columns
                             label
                                 | Nome
-                            input(type='text', placeholder='', name='contribuidor', pattern='([a-zA-Z]| |/|\|@|#|$|%|&)+')
-                            small(class="error")
-                                |Apenas letras são permitidas.
-
+                            input(type='text', placeholder='', name='contribuidor')
                     .row
                         .medium-12.columns
                             label
@@ -62,9 +59,15 @@ block content
                         .small-6.medium-2.columns.end
                             label
                                 | Número
-                            input(type='text', placeholder='', name='numero', pattern='number', required)
+                            input(type='text', placeholder='', name='numero', pattern='number')
                             small(class="error")
-                                |Preenchimento obrigatório, apenas números.
+                                |Apenas números.
+                        .small-12.columns
+                            label
+                                | Ponto de referência
+                            input(type='text', placeholder='', name='ponto_referencia', required)
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas letras.
                     .row
                         .small-12.medium-8.columns
                             label
@@ -91,8 +94,8 @@ block content
                             input(type='file', placeholder='Fazer upload de arquivo', name='foto')
 
                     .row
-                        .small-12.medium-8.columns
-                            label
+                        .small-12.medium-8.columns.option_list
+                            label.first
                                 | Sobre as condições do imóvel
                             .switch.small.radius
                                 input#possui_lixo(type='checkbox', name="possui_lixo", value="sim")
@@ -109,15 +112,21 @@ block content
                             .switch.small.radius
                                 input#limpo_conservado(type='checkbox', name="limpo_conservado", value="sim")
                                 label(for='limpo_conservado')
-                                span Limpo e/ou conservado, mas sem uso ou vazio
+                                span Limpo/conservado mas sem uso/vazio
                             .switch.small.radius
                                 input#outros(type='checkbox', name="outros", value="sim")
                                 label(for='outros')
                                 span Outros
+                        .hide.small-offset-1.small-6.columns.end#box_opcoes_outros
+                            label
+                                |Especifique
+                            input#outros_valor(type='text', name="outros_valor")
+                            small(class="error")
+                                |Preenchimento obrigatório, apenas letras
 
                     .row
-                        .small-12.medium-8.columns
-                            label
+                        .small-12.medium-8.columns.option_list
+                            label.first
                                 | A quanto tempo você percebe que o imóvel está ocioso?
 
                             .switch.radius.small

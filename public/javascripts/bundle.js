@@ -48,4 +48,16 @@ jQuery('#compartilhar').sharrre({
 });
 
 jQuery(document).foundation();
+
+jQuery(document).on('ready', function () {
+    jQuery('#outros').on('change', function () {
+        if (this.checked) {
+            jQuery('#outros_valor').attr('required', 'true');
+            jQuery('#box_opcoes_outros').removeClass('hide');
+        } else {
+            jQuery('#outros_valor').removeAttr('required');
+            jQuery('#box_opcoes_outros').addClass('hide');
+        }
+    });
+});
 },{"../bower_components/Sharrre/jquery.sharrre.min":1,"../bower_components/foundation/js/foundation.min":2,"../bower_components/jquery/dist/jquery.min":3}]},{},[4])
