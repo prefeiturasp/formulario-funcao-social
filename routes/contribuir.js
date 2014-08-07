@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 router.post('/receber', function(req, res) {
 
     var imovel = new Imovel();
-    
+
     // imovel.contribuidor = req.body.contribuidor;
     // imovel.email = req.body.email;
     // imovel.regiao = req.body.regiao;
@@ -38,7 +38,7 @@ router.post('/receber', function(req, res) {
             res.render('contribuir', { msg: err });
         }
 
-        res.render('sucesso', { msg: 'Dados armazenados com sucesso. Se você informou um email, entraremos em contato assim que tivermos alguma novidade. <br>Obrigado!' });
+        res.render('sucesso', { msg: 'Dados armazenados com sucesso! Para acompanhar os processos de notificações verifique seu andamento em nosso site. Agradecemos sua contribuição!' });
     });
 });
 
