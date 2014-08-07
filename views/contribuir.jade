@@ -45,12 +45,12 @@ block content
                                 option(value='Leste') Leste
                                 option(value='oeste') Oeste
                                 option(value='centro') Centro
-                
+
                 fieldset.columns.small-12.medium-6
                     legend
                         |Dados do Imóvel
                     p.alert-box.secondary
-                        |ATENÇÃO: Os campos destacados são de preenchimento obrigatório. 
+                        |ATENÇÃO: Os campos destacados são de preenchimento obrigatório.
                         |Os demais campos são optativos.
                     .row
                         .small-12.medium-8.columns
@@ -106,6 +106,10 @@ block content
                                 input#depredacao(type='checkbox', name="depredacao", value="sim")
                                 label(for='depredacao')
                                 span Sinais de depredação
+                            .switch.small.radius
+                                input#limpo_conservado(type='checkbox', name="limpo_conservado", value="sim")
+                                label(for='limpo_conservado')
+                                span Limpo e/ou conservado, mas sem uso ou vazio
                             .switch.small.radius
                                 input#outros(type='checkbox', name="outros", value="sim")
                                 label(for='outros')
