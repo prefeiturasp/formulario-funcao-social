@@ -4,8 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var mongoose = require('mongoose');
-
 
 var routes = require('./routes/index');
 var contribuir = require('./routes/contribuir');
@@ -24,6 +24,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(session({
+  secret: 'funcao-socialfuncao-social',
+  resave: false, // don't save session if unmodified
+  saveUninitialized: false, // don't create session until something stored
+}))
 app.use('/funcao-social/', express.static(path.join(__dirname, 'public')));
 app.use('/funcao-social/', routes);
 app.use('/funcao-social/contribuir', contribuir);
@@ -60,7 +65,6 @@ process.on('SIGINT', function() {
     process.exit(0);
   });
 });
-
 
 /// error handlers
 

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .content
+        form(action="/funcao-social/export", method="post", enctype="multipart/form-data", data-abide)
+            .row
+                fieldset.columns.small-12.medium-4.medium-centered
+                    if msg
+                        p.alert-box.alert #{msg}
+                    .row
+                        .medium-12.columns
+                            label
+                                | Usuário
+                            input(type='text', placeholder='', name='user')
+                        .medium-12.columns
+                            label
+                                | Senhas
+                            input(type='password', placeholder='', name='password')
+                    .row
+                        .small-offset-6.small-6.medium-offset-5.medium-3.end.columns
+                            button.right(type="submit")
+                                |enviar
